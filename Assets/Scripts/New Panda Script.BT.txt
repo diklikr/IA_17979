@@ -1,0 +1,10 @@
+tree("Root")
+	fallback
+		sequence
+			isLowHealth
+			isPlayerInRange
+			Flee
+		sequence
+			isPlayerInRange
+			Chase
+		Patrol

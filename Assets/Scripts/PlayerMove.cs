@@ -5,6 +5,8 @@ public class PlayerMove : MonoBehaviour
 {
     public enum State { Idle, Move, Jump, Attack, Dash }
 
+    public GameObject enemy;
+
     [Header("Movement")]
     public float moveSpeed = 8f;
     public float jumpForce = 7f;
@@ -16,6 +18,7 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Attack")]
     public float attackDuration = 0.4f;
+    public float damage;
 
     public State Current { get; private set; }
 
@@ -124,6 +127,11 @@ public class PlayerMove : MonoBehaviour
 
     }
 
+    void Attack()
+    {
+        if(enemy.GetComponent<IEnemy>() != null)
+        { enemy.GetComponent<IEnemy>().setHealth(damage); }
+    }
     void SetHorizontal(Vector3 horizontal)
     {
         var v = rb.linearVelocity;
