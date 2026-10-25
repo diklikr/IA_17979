@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
-using Panda
+using Panda;
 
 public class TacticEnemyCtrl : MonoBehaviour, IEnemy
 {
